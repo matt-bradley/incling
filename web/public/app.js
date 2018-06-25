@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var url = "127.0.0.1:8000/";
+    var url = "http://localhost:8000/";
     angular.module('tilesandtasksapp', [
         'oc.lazyLoad',
         'ui.router',
@@ -26,7 +26,7 @@
                     events: false
                 });
 
-                $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/0');
                 $locationProvider.html5Mode(true);
 
 
@@ -38,7 +38,7 @@
 
                     .state('user', {
                         parent: 'site',
-                        url: '/',
+                        url: '/0',
                         views: {
                             'content@': {
                                 template: '<div ui-view="appContent"></div>'
@@ -68,7 +68,7 @@
                                 return $ocLazyLoad.load({
                                     name: 'tilesandtasksapp',
                                     files: [
-                                        'static/scripts/app/controllers/tiles.js'
+                                        '/static/scripts/app/controllers/tiles.js'
                                     ]
                                 });
                             }
@@ -87,7 +87,7 @@
                                 return $ocLazyLoad.load({
                                     name: 'tilesandtasksapp',
                                     files: [
-                                        'static/scripts/app/controllers/tasks.js'
+                                        '/static/scripts/app/controllers/tasks.js'
                                     ]
                                 });
                             }

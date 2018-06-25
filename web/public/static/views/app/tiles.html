@@ -1,6 +1,84 @@
-<div>
 
-    <pre>
-        {{ tiles }}
-    </pre>
+
+<div class="project-container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <h1>All Tiles</h1>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary" style="margin-top: 18px;" type="button" ng-click=""><i
+                    class="fa fa-plus fa-fw"></i> New Tile
+            </button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-project-sm-3 col-project-md-2" id="" ng-repeat="tile in tiles | orderBy :tile.date:true">
+            <div class="project-box">
+                <div class="project-box-heading" style="background-color: #00ad9b" back-img="/static/images/bg.jpg" >
+                    <div class="project-title-container">
+                        <h3 id="{{ tile.id }}_title" class="project-box-title-text">{{ tile.date | date:'medium' }}</h3>
+                        <p class="project-box-title-desc"> Status: {{ tile.status_live }}</p>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false"><i class="fa fa-ellipsis-v fa-fw"></i></a>
+                        <ul class="dropdown-menu" style="right:0">
+                            <li><a ng-click="deleteProjectConfirm(tile)">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-box-body" style="min-height: 172px;">
+                    <div class="row">
+                        <div class=" col-xs-6 col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4>Tasks</h4>
+                                    <div class="panel-list-item " ng-repeat="task in tile.tasks">
+                                        <small> {{ task.title }}</small>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 text-right">
+                            <div class="project-box-check-list">
+                                <!--<ul class="list-unstyled pull-right text-justify">-->
+                                    <!--<li class="">-->
+                                        <!--<i ng-if="project.project_pending == true"-->
+                                           <!--class="fa fa-check fa-fw fa-green"></i>-->
+                                        <!--<i ng-if="project.project_pending != true"-->
+                                           <!--class="fa fa-close fa-fw fa-red"></i>-->
+                                        <!--<span>Flight Pending</span>-->
+                                    <!--</li>-->
+                                    <!--<li class="">-->
+                                        <!--<i ng-if="project.project_active == true "-->
+                                           <!--class="fa fa-check fa-fw fa-green"></i>-->
+                                        <!--<i ng-if="project.project_active != true "-->
+                                           <!--class="fa fa-close fa-fw fa-red"></i>-->
+                                        <!--<span>Flight Active</span>-->
+                                    <!--</li>-->
+                                    <!--<li class="disabled">-->
+                                        <!--<i ng-if="project.project_flown == true "-->
+                                           <!--class="fa fa-check fa-fw fa-green"></i>-->
+                                        <!--<i ng-if="project.project_flown != true "-->
+                                           <!--class="fa fa-close fa-fw fa-red"></i>-->
+                                        <!--<span>Flown</span>-->
+                                    <!--</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

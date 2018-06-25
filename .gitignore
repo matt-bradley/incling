@@ -3,7 +3,7 @@ web/.IDEA/
 web/.idea/
 web/.idea/dataSources.xml
 web/node_modules
-w
+
 .idea/dataSources.xml
 
 .idea/dataSources.local.xml
@@ -26,4 +26,4 @@ w
 
 .idea/workspace.xml
 
-app/tilesandtasks/__pycache__/serializers.cpython-36.pyc
+
