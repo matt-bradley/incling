@@ -36,7 +36,7 @@
                 <td data-title="Order">{{ task.order }}</td>
                 <td data-title="Task Type">{{ task.t_type }}</td>
                 <td data-title="Description">{{ task.desc }}</td>
-                <td data-title="Tile">{{ task.tile }}</td>
+                <td data-title="Tile">{{ task.tile.date | date: 'medium' }}</td>
                 <td data-title=" " colspan="2" class="text-center">
                     <button class="btn btn-sm btn-contrast-alert"
                             ng-click="removeAirframe(airframe)">
