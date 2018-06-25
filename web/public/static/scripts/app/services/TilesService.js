@@ -3,12 +3,14 @@ angular.module('tilesandtasksapp').service('TilesService', ['$http', 'API', func
 
     return {
         initTiles: function () {
-            $http.get(API.url + 'tiles/').then(function successCallback(response) {
-                for (var tile in response.data) {
-                    tiles.push(response.data[tile]);
-                }
-            });
-            return tiles;
+            return  $http.get(API.url + 'tiles/');
+        },
+        setTiles: function (tiles_in) {
+            tiles = tiles_in
+            return tiles
+        },
+        getTiles: function () {
+            return tiles
         }
     }
 

@@ -29,5 +29,6 @@ router.register(r'task', TasksViewset)
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
-    url(r'^', include(router.urls))
+    url(r'^', include(router.urls)),
+    path('admin/', admin.site.urls)
 ]
