@@ -1,3 +1,54 @@
-<div>
-    Hello
+<div class="row">
+    <div class="col-md-2">
+        <h1>All Tasks</h1>
+    </div>
+    <div class="col-md-8">
+        <button class="btn btn-primary" style="margin-top: 18px;" type="button" ui-sref="user.tiles"><i
+                class="fa fa-plus fa-fw"></i> View Tiles
+        </button>
+    </div>
+
+    <div class="col-md-2">
+        <button class="btn btn-primary" style="margin-top: 18px;" type="button" ng-click=""><i
+                class="fa fa-plus fa-fw"></i> New Task
+        </button>
+    </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <table class=" fl-resp-table table">
+            <thead>
+            <tr>
+                <th>Task Title</th>
+                <th>Order</th>
+                <th>Task Type</th>
+                <th>Description</th>
+                <th>Tile</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="task in tasks">
+                <td data-title="Task Title">{{ task.title }}</td>
+                <td data-title="Order">{{ task.order }}</td>
+                <td data-title="Task Type">{{ task.t_type }}</td>
+                <td data-title="Description">{{ task.desc }}</td>
+                <td data-title="Tile">{{ task.tile }}</td>
+                <td data-title=" " colspan="2" class="text-center">
+                    <button class="btn btn-sm btn-contrast-alert"
+                            ng-click="removeAirframe(airframe)">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+

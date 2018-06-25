@@ -25,7 +25,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'tiles', TilesViewset)
-router.register(r'task', TasksViewset)
+router.register(r'tasks', TasksViewset)
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
