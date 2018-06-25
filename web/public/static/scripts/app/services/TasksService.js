@@ -11,6 +11,10 @@ angular.module('tilesandtasksapp').service('TasksService', ['$http', 'API', func
         },
         getTasks: function () {
             return allTasks
+        },
+        removeTask: function (task) {
+            var url = API.url + 'tasks/' + task.id +'/';
+            return $http.delete(url)
         }
     }
 

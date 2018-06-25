@@ -11,4 +11,13 @@ angular.module('tilesandtasksapp')
                 // error handling
             });
 
+            $scope.remove = function (task) {
+
+                TasksService.removeTask(task).then(function (resp) {
+                    console.log(resp)
+                }, function (err) {
+                    console.log(err)
+                })
+            }
+
         }])
