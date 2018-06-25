@@ -1,0 +1,89 @@
+.spacer
+{
+padding:10px;
+
+@media (max-width: $screen-xs-min) {
+padding:0px;
+}
+}
+
+.AccountItem
+{
+cursor: pointer;
+border-top:1px solid $athens-grey;
+/*border-bottom:1px solid $athens-grey;*/
+padding:8px;
+}
+
+.AccountItem:hover
+{
+background-color:white;
+}
+
+.whiteheading
+{
+background-color:white;
+}
+
+.red{
+  color:red;
+}
+
+.blue{
+  color:blue;
+}
+
+.last
+{
+border-bottom:1px solid $athens-grey;
+}
+
+
+
+.settingscaret
+{
+float:right;
+margin-top:21px;
+}
+
+.settingsbg
+{
+background-color:white;
+min-height: 20px;
+padding: 19px;
+margin-bottom: 20px;
+}
+
+
+.sidebar-nav-settings {
+  > p {
+    padding: 4px 29px;
+    margin: 10px 0 0 0;
+    color: $iron-grey;
+    font-variant: small-caps;
+    font-size: 18px;
+
+  }
+  margin-left: auto;
+  padding: 0;
+  background-color: #F9FBFE;
+  /*border: solid 1px #dfdfdf;*/
+  margin-right: auto;
+  width: 75%;
+  @media(max-width: 991px) {
+    width: 100%;
+    & .nav > li{
+      display: inline-block;
+    }
+  }
+}
+
+.titlepadding
+{
+padding:8px;
+}
+
+.buttonfloat
+{
+float:right;
+}

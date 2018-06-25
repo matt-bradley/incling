@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 44 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-390.629,-586.069)">
+        <path d="M434.092,607.8C434.092,619.802 412.361,651.2 412.361,651.2C412.361,652.73 390.629,619.802 390.629,607.8C390.629,595.798 400.359,586.069 412.361,586.069C424.363,586.069 434.092,595.798 434.092,607.8" style="fill:rgb(100,226,145);fill-rule:nonzero;"/>
+        <rect x="411.883" y="609.158" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="411.883" y="606.355" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="414.755" y="606.355" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="414.755" y="609.158" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="414.755" y="603.552" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="411.883" y="603.552" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <path d="M420.834,615.378L417.98,615.378L417.98,601.149L414.426,601.149L414.426,597.035L420.834,597.035L420.834,615.378ZM417.268,615.378L413.565,615.378L413.565,611.882L411.126,611.882L411.126,615.378L407.423,615.378L407.423,601.973L417.268,601.973L417.268,615.378ZM406.641,615.378L403.65,615.378L403.65,598.093L410.401,599.828L410.401,601.149L406.641,601.149L406.641,615.378ZM412.36,590.455C403,590.455 395.411,598.044 395.411,607.404C395.411,616.765 403,624.354 412.36,624.354C421.721,624.354 429.31,616.765 429.31,607.404C429.31,598.044 421.721,590.455 412.36,590.455" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="409.059" y="603.552" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="409.059" y="609.158" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+        <rect x="409.059" y="606.355" width="0.878" height="0.846" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+</svg>

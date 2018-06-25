@@ -1,0 +1,25 @@
+/* Mapping */
+
+.basic-map {
+  height: 300px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border: solid 3px #E8E8E8;
+}
+
+.overview-map {
+  height: 500px;
+}
+
+.alterror
+{
+color:$negative-red;
+}
+
+.redborder
+{
+border:2px solid $negative-red !important;
+}
+
+
+//Maybe needs moved to it's own file
+/////////////////////////////////////

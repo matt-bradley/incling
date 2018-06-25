@@ -1,0 +1,110 @@
+$progress-size: 150px;
+$progress-size-mobile: 260px;
+$circle-size: 22px;
+$grey-disabled: #d4d4d4;
+$background-color: $regal-blue;
+$border-size: 2px;
+$color-done: #8cc43d;
+$color-active: #555;
+$label: "bottom"; //$label: TOP | BOTTOM
+$font-size: 12px;
+
+.progress-wrap {
+  height: $circle-size + $font-size*2.5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+#progress-container {
+
+  p {
+    font-size: $font-size;
+    line-height: $font-size;
+    position: absolute;
+    @if $label == bottom {
+      margin-top: $circle-size + 10px;
+    } @else {
+      margin-top: - $circle-size + $font-size + 5px;
+    }
+    width: $circle-size + 25px;
+    float: left;
+    margin-left: - $circle-size + 20px !important;
+
+  }
+
+  display: flex;
+  width: $progress-size;
+  margin: auto;
+  @media (max-width: 600px) {
+    width: $progress-size-mobile;
+  }
+  .line {
+    height: 1px;
+    width: $progress-size;
+    border-bottom: $border-size dotted $java-blue;
+    position: absolute;
+    margin-top: $circle-size /2;
+    z-index: 1000;
+    @media (max-width: 600px) {
+      width: $progress-size-mobile;
+    }
+  }
+  ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+    margin: auto;
+    justify-content: space-between;
+    z-index: 2000;
+
+  }
+
+  li {
+    display: inline-flex;
+    border: $java-blue solid $border-size;
+    background: $background-color;
+    height: $circle-size;
+    width: $circle-size;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: $grey-disabled;
+    font-size: $circle-size /2.5;
+    &:before {
+      font-size: 12px;
+      position: absolute;
+      margin-top: $circle-size;
+      color: #666;
+      margin-right: $circle-size*2;
+    }
+    p {
+      color: $grey-disabled;
+      margin-left: - $circle-size/2 - 10;
+    }
+  }
+
+  .done {
+    font-family: "FontAwesome";
+    border: $color-done solid $border-size;
+    color: $color-done;
+    &:after {
+      content: "\f00c";
+    }
+    p {
+      color: $color-done;
+      margin-left: - $circle-size/2 !important;
+    }
+  }
+  .active {
+    color: $color-active;
+    border: $color-active solid $border-size;
+    p {
+      color: $color-active;
+      margin-left: - $circle-size/2 - 10;
+    }
+  }
+}

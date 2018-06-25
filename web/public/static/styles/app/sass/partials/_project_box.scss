@@ -1,0 +1,336 @@
+// First Project
+
+.first-project {
+  width: 50%;
+  border: 3px solid $concrete-grey;
+  padding: 20px;
+}
+
+//
+// Project Boxes on main page
+// --------------------------------------------------
+
+$project-box-background-default: #FFF;
+
+//helper
+
+.guest-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: $lily-grey;
+  display: inline-block;
+  border: 2px solid $regal-blue;
+  font-size: 13px;
+  color: $regal-blue;
+  text-align: center;
+  & + .guest-circle {
+    margin-left: -10px;
+  }
+}
+
+.fa-red {
+  color: $negative-red
+}
+
+.fa-green {
+  color: $postive-green;
+}
+
+// Base class
+.project-box {
+  margin-bottom: $line-height-computed;
+  background-color: $panel-bg;
+  //border: 1px solid transparent;
+  border-radius: 4px;
+  min-height: 343px;
+  height: 100%;
+  @include box-shadow(0 2px 1px rgba(0, 0, 0, .05));
+}
+
+// Panel contents
+.project-box-body {
+  padding: $panel-body-padding $panel-body-padding 0;
+  @include clearfix();
+}
+
+.project-box-check-list {
+  padding: 20px;
+  @media (max-width: 854px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @media (max-width: 400px) {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 12px;
+  }
+}
+
+// heading
+.project-box-heading {
+  padding: $panel-heading-padding;
+  border-bottom: 1px solid $concrete-grey;
+  color: #FFF;
+  min-height: 115px;
+  @include border-top-radius((4px));
+
+  > .dropdown .dropdown-toggle {
+    color: inherit;
+  }
+  & > p {
+    font-size: 13px;
+  }
+
+  & > div.dropdown {
+    display: inline;
+    float: right;
+    cursor: pointer;
+    & > a {
+      color: $concrete-grey;
+      font-size: 23px;
+    }
+  }
+}
+
+// Within heading, strip any `h*` tag of its default margins for spacing.
+.project-title-container {
+  display: inline-block;
+  width: 80%;
+  padding: 5px 3px;
+  .project-box-title-text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: inline-block;
+    color: inherit;
+
+  }
+
+  .project-box-title-desc {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: block;
+    color: inherit;
+    font-size: 12px;
+
+  }
+}
+
+// Optional footer (stays gray in every modifier class)
+.project-box-footer {
+  padding: 0;
+  background-color: $panel-footer-bg;
+  //@include border-bottom-radius(($panel-border-radius - 1));
+
+  .btn-fill {
+    &:hover {
+      .project-box.project-box-heading {
+        border-top: 2px solid $java-blue;
+        border-left: 2px solid $java-blue;
+        border-right: 2px solid $java-blue;
+      }
+
+      .project-box.project-box-body {
+        border-left: 2px solid $java-blue;
+        border-right: 2px solid $java-blue;
+      }
+    }
+  }
+}
+
+.btn-fill {
+  &:hover {
+    .project-box.project-box-heading {
+      border-top: 2px solid $java-blue;
+      border-left: 2px solid $java-blue;
+      border-right: 2px solid $java-blue;
+    }
+
+    .project-box.project-box-body {
+      border-left: 2px solid $java-blue;
+      border-right: 2px solid $java-blue;
+    }
+  }
+}
+
+.project-checks {
+  & li {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+// List groups in panels
+//
+// By default, space out list group content from panel headings to account for
+// any kind of custom content between the two.
+
+.project-box {
+  > .list-group {
+    margin-bottom: 0;
+
+    .list-group-item {
+      border-width: 1px 0;
+      border-radius: 0;
+    }
+
+    // Add border top radius for first one
+    &:first-child {
+      .list-group-item:first-child {
+        border-top: 0;
+        @include border-top-radius(($panel-border-radius - 1));
+      }
+    }
+    // Add border bottom radius for last one
+    &:last-child {
+      .list-group-item:last-child {
+        border-bottom: 0;
+        @include border-bottom-radius(($panel-border-radius - 1));
+      }
+    }
+  }
+}
+
+// Collapse space between when there's no additional content.
+.project-box-heading + .list-group {
+  .list-group-item:first-child {
+    border-top-width: 0;
+  }
+}
+
+.list-group + .panel-footer {
+  border-top-width: 0;
+}
+
+// Tables in panels
+//
+// Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+// watch it go full width.
+
+.project-box {
+  > .table,
+  > .table-responsive > .table,
+  > .project-box-collapse > .table {
+    margin-bottom: 0;
+  }
+  // Add border top radius for first one
+  > .table:first-child,
+  > .table-responsive:first-child > .table:first-child {
+    @include border-top-radius(($panel-border-radius - 1));
+
+    > thead:first-child,
+    > tbody:first-child {
+      > tr:first-child {
+        td:first-child,
+        th:first-child {
+          border-top-left-radius: ($panel-border-radius - 1);
+        }
+        td:last-child,
+        th:last-child {
+          border-top-right-radius: ($panel-border-radius - 1);
+        }
+      }
+    }
+  }
+  // Add border bottom radius for last one
+  > .table:last-child,
+  > .table-responsive:last-child > .table:last-child {
+    @include border-bottom-radius(($panel-border-radius - 1));
+
+    > tbody:last-child,
+    > tfoot:last-child {
+      > tr:last-child {
+        td:first-child,
+        th:first-child {
+          border-bottom-left-radius: ($panel-border-radius - 1);
+        }
+        td:last-child,
+        th:last-child {
+          border-bottom-right-radius: ($panel-border-radius - 1);
+        }
+      }
+    }
+  }
+  > .project-box-body + .table,
+  > .project-box-body + .table-responsive {
+    border-top: 1px solid $table-border-color;
+  }
+  > .table > tbody:first-child > tr:first-child th,
+  > .table > tbody:first-child > tr:first-child td {
+    border-top: 0;
+  }
+  > .table-bordered,
+  > .table-responsive > .table-bordered {
+    border: 0;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th:first-child,
+        > td:first-child {
+          border-left: 0;
+        }
+        > th:last-child,
+        > td:last-child {
+          border-right: 0;
+        }
+      }
+    }
+    > thead,
+    > tbody {
+      > tr:first-child {
+        > td,
+        > th {
+          border-bottom: 0;
+        }
+      }
+    }
+    > tbody,
+    > tfoot {
+      > tr:last-child {
+        > td,
+        > th {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  > .table-responsive {
+    border: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.project-box-group {
+  margin-bottom: $line-height-computed;
+
+  // Tighten up margin so it's only between panels
+  .project-box {
+    margin-bottom: 0;
+    border-radius: $panel-border-radius;
+    + .project-box {
+      margin-top: 5px;
+    }
+  }
+
+  .project-box-heading {
+    border-bottom: 0;
+    + .project-box-collapse > .project-box-body {
+      border-top: 1px solid $panel-inner-border;
+    }
+  }
+  .project-box-footer {
+    border-top: 0;
+    + .project-box-collapse .project-box-body {
+      border-bottom: 1px solid $panel-inner-border;
+    }
+  }
+}
+

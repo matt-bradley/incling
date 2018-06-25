@@ -1,0 +1,67 @@
+.fl-login-error-container, .fl-registration-error-container {
+  height: auto;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.fl-login-error {
+  height: 50px;
+  line-height: 50px;
+  margin-right: -20px;
+  margin-left: -20px;
+  color: white;
+  background-color: darken($alert-danger-bg, 30);
+}
+
+.fl-registration-error {
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  background-color: darken($alert-danger-bg, 30);
+}
+
+.braintree-hosted-fields-focused {
+  border: 2px solid $java-blue;
+  outline: 0;
+}
+
+.braintree-hosted-fields-focused.focused-invalid, .braintree-hosted-fields-invalid {
+  color: $negative-red;
+  border: 2px solid $negative-red;
+  outline: 0;
+}
+
+#card-image {
+  position: absolute;
+  top: 2.5em;
+  right: 1.5em;
+  width: 44px;
+  height: 28px;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/346994/card_sprite.png);
+  background-size: 86px 458px;
+  border-radius: 4px;
+  background-position: -100px 0;
+  background-repeat: no-repeat;
+  margin-bottom: 1em;
+  &.visa {
+    background-position: 0 -398px;
+  }
+  &.master-card {
+    background-position: 0 -281px;
+  }
+  &.american-express {
+    background-position: 0 -370px;
+  }
+  &.discover {
+    background-position: 0 -163px;
+  }
+  &.maestro {
+    background-position: 0 -251px;
+  }
+  &.jcb {
+    background-position: 0 -221px;
+  }
+  &.diners-club {
+    background-position: 0 -133px;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tiles and Tasks</title>
+    <base href="/">
+    <meta name='description' content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+    <link rel="stylesheet" type="text/css" href="static/styles/app/app.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="static/bower_components/angular/angular.min.js"></script>
+    <script src="static/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="static/bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="static/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="static/bower_components/angular-ui-router-tabs/src/ui-router-tabs.js"></script>
+    <script src="static/bower_components/json3/lib/json3.min.js"></script>
+    <script src="static/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="static/bower_components/angular-localization/angular-localization.js"></script>
+    <script src="static/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script>
+
+
+    <script src="app.js"></script>
+
+
+
+    <script src='static/scripts/app/services/TilesService.js'></script>
+    <script src='static/scripts/app/services/TasksService.js'></script>
+
+
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.css">
+
+</head>
+
+
+<body ng-app="tilesandtasksapp">
+<main>
+    <div id="wrapper" class="container-fluid">
+        <div id="page-wrapper" ui-view="content"></div>
+    </div>
+</main>
+
+</body>
+
+
+</html>

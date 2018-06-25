@@ -1,0 +1,129 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin fl-button-alternate($static-color, $static-background, $static-border,$alt-background, $alt-text-color, $alt-border) {
+  color: $static-color;
+  background-color: $static-background;
+  border-color: $static-border;
+  border-width: 2px;
+  font-weight: 400;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $alt-text-color;
+    background-color: $alt-background;
+    border-color: $alt-border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: #9E9E9E;
+      border-color: #9E9E9E;
+      cursor: not-allowed;
+      color: #FFF;
+    }
+  }
+
+  .badge {
+    color: $static-background;
+    background-color: $static-color;
+  }
+}
+
+@mixin fl-button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 20%);
+    border-color: darken($border, 20%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+@mixin fl-button-variant-maptoolbar($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color!important;
+    background-color: darken($background, 20%)!important;
+    border-color: darken($border, 20%)!important;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none!important;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $iron-grey!important;
+      border-color: $iron-grey!important;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Button sizes
+@mixin fl-button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+}

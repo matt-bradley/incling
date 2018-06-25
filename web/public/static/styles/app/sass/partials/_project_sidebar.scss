@@ -1,0 +1,65 @@
+
+.sidebar-nav {
+  > p {
+    padding: 4px 29px;
+    margin: 10px 0 0 0;
+    color: $iron-grey;
+    font-variant: small-caps;
+    font-size: 18px;
+
+  }
+  margin-left: auto;
+  padding: 0;
+  background-color: #FFF;
+  border: solid 1px #dfdfdf;
+  margin-right: auto;
+  width: 75%;
+  @media(max-width: 991px) {
+    width: 100%;
+    & .nav > li{
+      display: inline-block;
+    }
+  }
+}
+
+.hardware-nav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  @media(max-width: 991px) {
+    > img {
+      display: none;
+    }
+  }
+}
+
+.multiConflict
+{
+color: $negative-red !important;
+}
+
+.conflictsbadge
+{
+  display: inline-block;
+  margin-left:3px;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: $font-size-small;
+  font-weight: $badge-font-weight;
+  color: $badge-color;
+  line-height: $badge-line-height;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $negative-red;
+  border-radius: 10px;
+}
+
+
+
+#conflictContainer
+{
+overflow-y: scroll !important;
+padding-left:10px;
+/*border:2px solid yellow;*/
+}

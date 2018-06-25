@@ -1,0 +1,95 @@
+.table-btn-group {
+  text-align: right;
+  > button + button {
+    margin-left: 10px;
+  }
+}
+
+
+.btn-toggled
+{
+  color: $navbar-grey;
+}
+
+
+.btn-not-toggled
+{
+  color:$java-blue;
+}
+
+
+#pilotdata
+{
+ padding:30px;
+}
+
+
+
+.inlineinput
+{
+ display:inline-block;
+  width:100%;
+  float:left;
+  margin-bottom:10px;
+}
+
+.inputlabelheight
+{
+ height:40px;
+  margin-top:7px;
+}
+
+#passwordinfo
+{
+  margin-top:20px;
+}
+
+
+/*.slideoff
+{
+ display:none;
+}*/
+
+
+
+/* when showing the pilot info */
+.slideon
+{
+   border:1px solid #dddddd;
+  background-color:white;
+ -webkit-animation: 2s slideInDown ease;
+  animation : 2s slideInDown ease;
+}
+
+/* ANIMATIONS (FROM ANIMATE.CSS) */
+
+/* slideIndown */
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0,-3%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -3%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fl-tooltip > .tooltip-inner{
+  background-color: $navbar-grey!important;
+}

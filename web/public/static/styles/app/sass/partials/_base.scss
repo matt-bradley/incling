@@ -1,0 +1,140 @@
+@import "variables";
+//Base Colors
+
+//****  BLUES *****
+
+//base
+//base
+$java-blue: #36A8e0;
+//alts
+$oyster-blue: lighten($java-blue, 30); //light #8eceee
+$aqua-blue: lighten($java-blue, 40); // lighter #e7f5fb
+
+$regal-blue: darken($java-blue, 20); //dark
+$brand-blue: darken($java-blue, 40); //darker
+
+//****  GREYS *****
+
+$background-grey: #F9FBFE;
+$concrete-grey: #F0F0F0;
+$lily-grey: #E8E8E8;
+$athens-grey: #DBDBDB;
+$iron-grey: #D1D1D1;
+$navbar-grey: #29292a;
+
+//****  Primarys *****
+
+$postive-green: #64E291;
+$negative-red: #EA425F;
+$alert-orange: #F99C21;
+$neutral-pink: #FF7675;
+
+// TYPOGRAPHY
+
+$text-standard: "Hind", sans-serif;
+$text-headers-only: "proxima-nova", sans-serif;
+
+//TODO: Font Families, Weights, Sizes and scaling
+
+//== Project Modals
+//
+//##
+
+$project-zindex-modal: 999;
+$project-zindex-modal-background: #FFF;
+$project-line-height-base: 1.428571429 !default; // 20/14
+
+$project-border-radius-large: 6px;
+
+//** Padding applied to the modal body
+$project-modal-inner-padding: 15px !default;
+
+//** Padding applied to the modal title
+$project-modal-title-padding: 15px !default;
+//** Modal title line-height
+$project-modal-title-line-height: $project-line-height-base !default;
+
+//** Background color of modal content area
+$project-modal-content-bg: #fff !default;
+//** Modal content border color
+$project-modal-content-border-color: rgba(0, 0, 0, .2) !default;
+//** Modal content border color **for IE8**
+$project-modal-content-fallback-border-color: #999 !default;
+
+//** Modal backdrop background color
+$project-modal-backdrop-bg: #000 !default;
+//** Modal backdrop opacity
+$project-modal-backdrop-opacity: .5 !default;
+//** Modal header border color
+$project-modal-header-border-color: #e5e5e5 !default;
+//** Modal footer border color
+$project-modal-footer-border-color: $modal-header-border-color !default;
+
+$project-modal-lg: 450px !default;
+$project-modal-md: 600px !default;
+$project-modal-sm: 300px !default;
+
+// OVERRIDES
+
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+body {
+  background-color: $background-grey;
+}
+
+.error-text {
+  color: $negative-red;
+}
+
+.pass-text {
+  color: darken($postive-green, 30%);
+}
+
+.error-box {
+  background: lighten($negative-red, 43%);
+  border: 1px solid $negative-red;
+  border-radius: 4px;
+  position: relative;
+  color: $negative-red
+}
+
+.input-error{
+  border-color: $negative-red;
+}
+
+.pass-box {
+  background: lighten($postive-green, 2%);
+  border: 1px solid darken($postive-green, 30%);
+  border-radius: 4px;
+  position: relative;
+  color: darken($postive-green, 30%);
+}
+
+.img_width {
+  width: 180px;
+}
+
+.img_width_none {
+  width: 100px;
+};
+
+#toast-container .toast {
+  opacity: 1!important;
+}
+
+
+.toast-top-right{
+  top: 80px!important;
+  right: 12px;
+}
+
+.toast-sectional{
+  bottom: 80px!important;
+  left: 12px;
+}
+

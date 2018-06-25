@@ -1,0 +1,247 @@
+@import "base";
+
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+// Stays the same
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.project-modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $project-zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate3d(0, -25%, 0);
+    @include transition-transform(0.3s ease-out);
+  }
+  &.in .modal-dialog {
+    @include translate3d(0, 0, 0)
+  }
+}
+
+.modal-open .project-modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.project-modal .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+// Actual modal.
+.project-modal .modal-content {
+  position: relative;
+  background-color: $project-modal-content-bg;
+  border: 1px solid $project-modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $project-modal-content-border-color;
+  border-radius: $project-border-radius-large;
+  @include box-shadow(0 3px 9px rgba(0, 0, 0, .5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.project-modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $project-zindex-modal-background;
+  background-color: $project-modal-backdrop-bg;
+  // Fade for backdrop
+  &.fade {
+    @include opacity(0);
+  }
+  &.in {
+    @include opacity($project-modal-backdrop-opacity);
+  }
+}
+
+///
+//
+//
+// These classes are all okay to pass without interiance as they are hardcoded in the modal template
+//
+//
+//
+// Modal header
+// Top section of the modal w/ title and dismiss
+.project-modal-header {
+  background-color: $regal-blue;
+  color: #FFF;
+  text-align: center;
+  padding: $project-modal-title-padding;
+  border-bottom: 1px solid $project-modal-header-border-color;
+  //min-height: ($project-modal-title-padding + $project-modal-title-line-height);
+  min-height: 80px;
+  border-top-left-radius: $project-border-radius-large - 1;
+  border-top-right-radius: $project-border-radius-large - 1;
+}
+
+// Close icon
+.project-modal-header .close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.project-modal-title {
+  margin: 0;
+  line-height: $project-modal-title-line-height;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.project-modal-body {
+  position: relative;
+  padding: $project-modal-inner-padding;
+}
+
+// Footer (for actions)
+.project-modal-footer {
+  //padding: $project-modal-inner-padding;
+  text-align: right; // right align buttons
+  border-top: 1px solid $project-modal-footer-border-color;
+  @include clearfix(); // clear it in case folks use .pull-* classes on buttons
+
+  .btn-fill {
+    background-color: $aqua-blue;
+    padding: 15px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 100%;
+    border: 0;
+    color: $regal-blue;
+    &:hover {
+      background-color: $java-blue;
+      color: #FFF;
+      .project-box.project-box-heading {
+        border-top: 2px solid $java-blue;
+        border-left: 2px solid $java-blue;
+        border-right: 2px solid $java-blue;
+      }
+
+      .project-box.project-box-body {
+        border-left: 2px solid $java-blue;
+        border-right: 2px solid $java-blue;
+      }
+    }
+  }
+
+  .btn-fill .validated {
+    color: $regal-blue;
+  }
+
+  // Properly space out buttons
+  .btn + .btn {
+    //margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+};
+
+// Measure scrollbar width for padding body during modal show/hide
+.project-modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+};
+
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+  // Automatically set modal's width for larger viewports
+  .project-modal .modal-dialog {
+    width: $project-modal-md;
+    margin: 100px auto;
+  }
+  .project-modal .modal-content {
+    @include box-shadow(0 5px 15px rgba(0, 0, 0, .5));
+  }
+
+  // Modal sizes
+  .project-modal .modal-sm {
+    width: $project-modal-sm;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .project-modal .modal-lg {
+    width: $project-modal-lg;
+  }
+};
+
+// Custom Elements
+
+.type-container {
+  display: inline-block;
+  margin: 10px;
+  & > span {
+    padding: 5px;
+    border: 2px solid $java-blue;
+    cursor: pointer;
+    border-radius: 4px;
+    &.active {
+      background-color: $java-blue;
+      color: #FFF;
+    }
+  }
+};
+
+.importance-container {
+  & > div {
+    text-align: center;
+    border: 2px solid $java-blue;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    width: 25%;
+    &.active {
+      background-color: $java-blue;
+      color: #FFF;
+    }
+    & > img {
+      width: 55%;
+    }
+    & > p {
+      margin-top: 13px;
+      margin-bottom: 0;
+    }
+  }
+};

@@ -1,0 +1,76 @@
+
+#batterytable table
+{
+padding-left:3px !important;
+padding-right:3px !important;
+}
+
+
+#batterytable
+{
+padding:10px;
+min-height:450px;
+}
+
+.no-map-data{
+
+}
+
+.battery-review-header
+{
+color:white !important;
+background-color: $java-blue !important;
+}
+
+
+.table-even
+{
+background-color: $concrete-grey !important;
+}
+
+.flight-review-padding
+{
+padding-left:44px !important;
+margin-top:10px !important;
+margin-bottom:15px !important;
+}
+
+.battery-logs
+{
+padding:10px !important;
+text-align: center !important;
+}
+
+.battery-logs-inner
+{
+padding:15px;
+background-color: white;
+}
+
+.battery-logs-info
+{
+color:$java-blue;
+font-size:30px;
+}
+
+#flighttel-mob
+{
+  display:none !important;
+}
+
+@media (max-width: 767px) {
+
+  #flighttel-mob
+  {
+    display:block !important;
+    padding:10px !important;
+    color:$java-blue !important;
+    margin-bottom:25px !important;
+    text-align:center !important;
+  }
+
+  #teleTabContent
+  {
+    display:none !important;
+  }
+}

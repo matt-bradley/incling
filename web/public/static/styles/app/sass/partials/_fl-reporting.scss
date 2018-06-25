@@ -1,0 +1,235 @@
+#dateSetting {
+  padding-bottom: 25px;
+}
+
+.projectReportBox {
+  border: 2px solid black;
+  width: 300px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.spacer-10 {
+  height: 10px;
+}
+
+.spacer-20 {
+  height: 20px;
+}
+
+.spacer-30 {
+  height: 30px;
+}
+
+.report_box {
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+
+.report_boxes_inner {
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+.report_boxes_inner_selected {
+  border: 1px solid $java-blue;
+  & > .report_box_footer > .report_label {
+    background-color: $java-blue !important; ;
+    color: #FFF !important;
+  }
+}
+
+.report_boxes_inner_unselected {
+  border: 1px solid #eee;
+}
+
+.report_box_heading {
+  padding: 10px 15px;
+  background-color: white !important;
+  min-height: 40px;
+  color: #36A8e0;
+  text-align: center;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.report_box_body {
+  height: 150px;
+  padding: 10px 15px;
+}
+
+.report_label {
+  width: 100%;
+  height: 50px;
+  background-color: #fff !important;
+  padding: 15px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  color: #36A8e0 !important;
+  border-top: 1px solid #eee;
+  &:hover {
+    background-color: $java-blue !important;
+    color: #FFF !important;
+  }
+}
+
+.report_checkbox {
+  border: 0 !important;
+  clip: rect(0 0 0 0);
+  display: none !important;
+}
+
+
+
+
+
+.report_checkbox[disabled] + label
+{
+color:white !important;
+background-color:$lily-grey !important;
+&:hover {
+  color:white !important;
+  background-color: $lily-grey !important;
+  cursor:auto;
+}
+}
+
+
+.report_box_footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.reportsFilters:hover
+{
+color:$java-blue;
+}
+
+.reportsFilters
+{
+margin-left:20px;
+}
+
+
+.pilotLogBox
+{
+height: 450px;
+width:100%;
+display: block;
+overflow-y:scroll;
+border:2px solid blue !important;
+}
+
+#viewflightHeader
+{
+color: $java-blue;
+}
+
+#pilotLogTableHead, #pilotLogTableBody { display: block; }
+
+#pilotLogTableBody {
+    //min-height:20px;
+    //max-height: 415px;
+    width:100%;      /* Just for the demo*/
+    overflow-x: hidden;
+}
+.logProjectHeader{
+  border: none;
+  background: #bee5f9;
+}
+
+                          /* USING PIXELS TO SET WIDTH*/
+/*.pLogBody:nth-child(1), .pLogHead:nth-child(1) { min-width: 100px; border-bottom:0px !important; }
+.pLogBody:nth-child(2), .pLogHead:nth-child(2) { min-width: 230px; border-bottom:0px !important; }
+.pLogBody:nth-child(3), .pLogHead:nth-child(3) { min-width: 210px; border-bottom:0px !important; }
+.pLogBody:nth-child(4), .pLogHead:nth-child(4) { min-width: 110px; border-bottom:0px !important; }
+.pLogBody:nth-child(5), .pLogHead:nth-child(5) { min-width: 220px; border-bottom:0px !important; }
+.pLogBody:nth-child(6), .pLogHead:nth-child(6) { min-width: 200px; border-bottom:0px !important; }
+.pLogBody:nth-child(7), .pLogHead:nth-child(7) { min-width: 180px;  border:2px solid red;}*/
+
+                              /*USING % TO SET WIDTH*/
+.pLogBody:nth-child(1), .pLogHead:nth-child(1) { width: 10%; border-bottom:0px !important; }
+.pLogBody:nth-child(2), .pLogHead:nth-child(2) { width: 10%; border-bottom:0px !important; }
+.pLogBody:nth-child(3), .pLogHead:nth-child(3) { width: 10%; border-bottom:0px !important; }
+.pLogBody:nth-child(4), .pLogHead:nth-child(4) { width: 10%; border-bottom:0px !important; }
+.pLogBody:nth-child(5), .pLogHead:nth-child(5) { width: 10%; border-bottom:0px !important; }
+.pLogBody:nth-child(6), .pLogHead:nth-child(6) { width: 10%; border-bottom:0px !important; }
+
+#pilotLogsMob
+{
+display:none;
+}
+
+
+/*   MEDIA QUERIES FOR TABLE COLUMNS  */
+@media (max-width: 2560px) and (min-width:2014px) {
+
+  .pLogBody:nth-child(1), .pLogHead:nth-child(1) { width: 4%; border-bottom:0px !important;  }
+  .pLogBody:nth-child(2), .pLogHead:nth-child(2) { width: 4%; border-bottom:0px !important; }
+  .pLogBody:nth-child(3), .pLogHead:nth-child(3) { width: 4%; border-bottom:0px !important; }
+  .pLogBody:nth-child(4), .pLogHead:nth-child(4) { width: 4%; border-bottom:0px !important; }
+  .pLogBody:nth-child(5), .pLogHead:nth-child(5) { width: 4%; border-bottom:0px !important; }
+  .pLogBody:nth-child(6), .pLogHead:nth-child(6) { width: 4%; border-bottom:0px !important; }
+}
+
+@media (max-width: 2013px) and (min-width:1441px ) {
+
+  .pLogBody:nth-child(1), .pLogHead:nth-child(1) { width: 6%; border-bottom:0px !important;  }
+  .pLogBody:nth-child(2), .pLogHead:nth-child(2) { width: 6%; border-bottom:0px !important; }
+  .pLogBody:nth-child(3), .pLogHead:nth-child(3) { width: 6%; border-bottom:0px !important; }
+  .pLogBody:nth-child(4), .pLogHead:nth-child(4) { width: 6%; border-bottom:0px !important; }
+  .pLogBody:nth-child(5), .pLogHead:nth-child(5) { width: 6%; border-bottom:0px !important; }
+  .pLogBody:nth-child(6), .pLogHead:nth-child(6) { width: 6%; border-bottom:0px !important; }
+}
+
+@media (max-width: 1440px) and (min-width:1315px ) {
+
+  .pLogBody:nth-child(1), .pLogHead:nth-child(1) { width: 9%; border-bottom:0px !important;  }
+  .pLogBody:nth-child(2), .pLogHead:nth-child(2) { width: 9%; border-bottom:0px !important; }
+  .pLogBody:nth-child(3), .pLogHead:nth-child(3) { width: 9%; border-bottom:0px !important; }
+  .pLogBody:nth-child(4), .pLogHead:nth-child(4) { width: 9%; border-bottom:0px !important; }
+  .pLogBody:nth-child(5), .pLogHead:nth-child(5) { width: 9%; border-bottom:0px !important; }
+  .pLogBody:nth-child(6), .pLogHead:nth-child(6) { width: 9%; border-bottom:0px !important; }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+
+  .pLogBody:nth-child(1), .pLogHead:nth-child(1) {width: 13%; border-bottom:0px !important; }
+  .pLogBody:nth-child(2), .pLogHead:nth-child(2) { width: 13%; border-bottom:0px !important; }
+  .pLogBody:nth-child(3), .pLogHead:nth-child(3) { width: 13%; border-bottom:0px !important; }
+  .pLogBody:nth-child(4), .pLogHead:nth-child(4) { width: 13%; border-bottom:0px !important; }
+  .pLogBody:nth-child(5), .pLogHead:nth-child(5) { width: 13%; border-bottom:0px !important; }
+  .pLogBody:nth-child(6), .pLogHead:nth-child(6) { width: 13%; border-bottom:0px !important; }
+
+  #pilotLogSearch
+  {
+    margin-bottom:10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #pLogstable
+  {
+    display:none;
+  }
+
+  #pilotLogsMob
+  {
+  display: block;
+  }
+
+  #pilotLogSearch
+  {
+    display:none;
+  }
+}

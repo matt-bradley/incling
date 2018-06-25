@@ -1,0 +1,218 @@
+//
+// Flyte Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include fl-button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  @include user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      @include tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-map {
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-left: 25px;
+}
+
+.btn-map-finish-drawing{
+  padding: 2px 45px;
+  font-size: 15px;
+}
+
+.btn-input-group {
+  border-radius: 4px;
+}
+
+.btn-fill {
+  background-color: $aqua-blue;
+  padding: 15px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  width: 100%;
+  border: 0;
+  &:hover {
+    background-color: $java-blue;
+    color: #FFF;
+  }
+}
+
+.btn-date {
+  background-color: #FFF;
+}
+
+.btn-date-nav {
+  background-color: $java-blue;
+  &:hover {
+    background-color: $regal-blue;
+    color: #FFF;
+  }
+}
+
+.btn-primary {
+  border-radius: 4px;
+  @include fl-button-variant(#FFF, $java-blue, $java-blue);
+}
+
+.btn-maptoolbar {
+  border-radius: 4px;
+  //TODO: Build out styles for groups
+  @include fl-button-variant-maptoolbar(#FFF, $java-blue, $java-blue);
+}
+
+.btn-contrast {
+  border-radius: 4px;
+  @include fl-button-variant(#FFF, $postive-green, $postive-green)
+}
+
+.btn-contrast-alert {
+  border-radius: 4px;
+  @include fl-button-variant(#FFF, $negative-red, $negative-red)
+}
+
+.btn-alternate {
+  border-radius: 4px;
+  @include fl-button-alternate($java-blue, #FFF, $java-blue, $java-blue, #FFF, $java-blue)
+}
+
+.btn-filter {
+  border-radius: 2px;
+  @include fl-button-variant(#333, $iron-grey, $iron-grey)
+  //@include fl-button-alternate($iron-grey, $concrete-grey, $iron-grey, $iron-grey, $concrete-grey, $iron-grey)
+}
+
+.btn-smooth {
+  border-radius: 20px !important;
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include fl-button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include fl-button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+.btn-xs {
+  @include fl-button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.tooltip.fl-tooltip .tooltip-inner {
+  color: #FFF;
+  background-color: $regal-blue;
+  font-size: 12px;
+}
+
+/* Hide arrow */
+.tooltip.fl-tooltip .tooltip-arrow {
+  border-top-color: $regal-blue;
+}
