@@ -11,6 +11,13 @@ angular.module('tilesandtasksapp').service('TilesService', ['$http', 'API', func
         },
         getTiles: function () {
             return tiles
+        },
+        getTileByID: function (tile) {
+            for( tile in tiles){
+                if(tiles[tile].id = tile){
+                    return tiles[tile]
+                }
+            }
         }
     }
 

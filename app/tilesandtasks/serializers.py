@@ -17,6 +17,10 @@ class TasksSerializer(serializers.ModelSerializer):
         }
         return out
 
+    def set_tile(self, obj):
+        print(obj)
+        return obj
+
 
 class TilesSerializer(serializers.ModelSerializer):
     tasks = TasksSerializer(many=True, read_only=True)

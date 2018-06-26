@@ -26,4 +26,3 @@ class Tasks(models.Model):
 
     class Meta:
         unique_together = ('tile', 'order')
-

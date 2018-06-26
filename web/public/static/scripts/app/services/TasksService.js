@@ -22,7 +22,7 @@ angular.module('tilesandtasksapp').service('TasksService', ['$http', 'API', func
         },
         addTask: function (task) {
             var url = API.url + 'tasks/';
-            return $http.post(url)
+            return $http.post(url, task)
         },
     }
 

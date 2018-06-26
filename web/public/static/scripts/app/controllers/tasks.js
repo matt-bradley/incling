@@ -40,8 +40,8 @@ angular.module('tilesandtasksapp')
             }
 
         }])
-    .controller('addTaskModalCtrl', ['$scope', '$uibModalInstance', '$http', 'formlyVersion',
-        function ($scope, $uibModalInstance, $http, formlyVersion) {
+    .controller('addTaskModalCtrl', ['$scope', '$uibModalInstance', '$http', 'formlyVersion', 'TasksService', 'TilesService',
+        function ($scope, $uibModalInstance, $http, formlyVersion, TasksService, TilesService) {
             $scope.cancel = function () {
                 $uibModalInstance.dismiss('cancel');
             };
@@ -73,14 +73,14 @@ angular.module('tilesandtasksapp')
                 },
                 {
                     key: 'desc',
-                    type: 'textbox',
+                    type: 'input',
                     templateOptions: {
                         label: 'Description'
                     }
                 },
                 {
                     key: 'tile',
-                    type: 'number',
+                    type: 'input',
                     templateOptions: {
                         label: 'tile'
                     }
@@ -90,6 +90,7 @@ angular.module('tilesandtasksapp')
             $scope.originalFields = angular.copy($scope.fields);
 
             $scope.onSubmit = function () {
+                $scope.model.tile = TilesService.getTileByID($scope.model.tile);
                 TasksService.addTask($scope.model).then(function (resp) {
                     console.log(resp)
                 })
