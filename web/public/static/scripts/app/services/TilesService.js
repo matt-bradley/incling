@@ -18,6 +18,14 @@ angular.module('tilesandtasksapp').service('TilesService', ['$http', 'API', func
                     return tiles[tile]
                 }
             }
+        },
+        addTaskToTile: function (tile, task) {
+            function findt(t) {
+                return t.id === tile.id
+            }
+            var a = tiles.find(findt);
+            a.tasks.append(task);
+            return true
         }
     }
 

@@ -31,7 +31,6 @@ angular.module('tilesandtasksapp')
             }
 
             $scope.remove = function (task) {
-
                 TasksService.removeTask(task).then(function (resp) {
                     console.log(resp)
                 }, function (err) {
@@ -77,20 +76,13 @@ angular.module('tilesandtasksapp')
                     templateOptions: {
                         label: 'Description'
                     }
-                },
-                {
-                    key: 'tile',
-                    type: 'input',
-                    templateOptions: {
-                        label: 'tile'
-                    }
                 }
             ];
 
             $scope.originalFields = angular.copy($scope.fields);
 
             $scope.onSubmit = function () {
-                $scope.model.tile = TilesService.getTileByID($scope.model.tile);
+                // $scope.model.tile = TilesService.getTileByID($scope.model.tile);
                 TasksService.addTask($scope.model).then(function (resp) {
                     console.log(resp)
                 })

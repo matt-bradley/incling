@@ -22,7 +22,7 @@ class Tasks(models.Model):
     order = models.CharField(max_length=120)
     t_type = models.CharField(max_length=100)
     desc = models.CharField(max_length=300)
-    tile = models.ForeignKey(Tiles, on_delete=models.CASCADE, related_name='tasks')
+    tile = models.ForeignKey(Tiles, on_delete=models.CASCADE, related_name='tasks', null=True)
 
     class Meta:
         unique_together = ('tile', 'order')

@@ -13,17 +13,17 @@ angular.module('tilesandtasksapp').service('TasksService', ['$http', 'API', func
             return allTasks
         },
         updateTasks: function (task) {
-            var url = API.url + 'tasks/' + task.id +'/';
+            var url = API.url + 'tasks/' + task.id + '/';
             return $http.put(url)
         },
         removeTask: function (task) {
-            var url = API.url + 'tasks/' + task.id +'/';
+            var url = API.url + 'tasks/' + task.id + '/';
             return $http.delete(url)
         },
         addTask: function (task) {
             var url = API.url + 'tasks/';
             return $http.post(url, task)
-        },
+        }
     }
 
 }])

@@ -39,20 +39,19 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <h4>Tasks</h4>
-                                    <div class="panel-list-item " ng-repeat="task in tile.tasks">
+                                    <div class="panel-list-item " ng-repeat="task in tile.tasks | orderBy: task.order">
                                         <small> {{ task.title }}</small>
                                         <span>&nbsp; | &nbsp;</span>
                                         <small>Task Type: <b>{{task.t_type}} </b></small>
-
+                                        <i class="fa fa-times" style="color: darkred; cursor: pointer" ng-click="removeTask()"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 text-right">
                             <div class="project-box-check-list">
-
-                                <button class="btn btn-primary">
-                                    New Task
+                                <button class="btn btn-primary" ng-click="openModalAddTaskToTile(tile)">
+                                    Add Task
                                 </button>
                             </div>
                         </div>
