@@ -28,6 +28,12 @@
     <script src="static/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
     <script src="static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script>
+    <script src="static/bower_components/api-check-7.5.5/dist/api-check.min.js"></script>
+    <script src="//npmcdn.com/api-check@latest/dist/api-check.js"></script>
+
+
+    <script src="//npmcdn.com/angular-formly@latest/dist/formly.js"></script>
+    <script src="//npmcdn.com/angular-formly-templates-bootstrap@latest/dist/angular-formly-templates-bootstrap.js"></script>
 
 
     <script src="app.js"></script>
@@ -51,6 +57,11 @@
 </main>
 
 </body>
-
+<script type="text/ng-template" id="custom.html">
+    <div class="form-group">
+        <label for="{{::id}}">{{options.templateOptions.label}}</label>
+        <input id="{{::id}}" name="{{::id}}" class="form-control" ng-model="model[options.key]" />
+    </div>
+</script>
 
 </html>

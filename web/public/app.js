@@ -9,7 +9,9 @@
         'ngCookies',
         'ngStorage',
         'ngMessages',
-        'ngSanitize'
+        'ngSanitize',
+        'formly',
+        'formlyBootstrap'
     ])
         .service('API', function () {
             var static_base = url;
@@ -19,14 +21,20 @@
                 url: base_url
             };
         })
-        .config(['$stateProvider', '$httpProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$locationProvider',
-            function ($stateProvider, $httpProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider) {
+
+        .config(['$stateProvider', '$httpProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$locationProvider', 'formlyConfigProvider',
+            function ($stateProvider, $httpProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider, formlyConfigProvider) {
+                formlyConfigProvider.setType({
+                    name: 'custom',
+                    templateUrl: 'custom.html'
+                });
+
                 $ocLazyLoadProvider.config({
                     debug: false,
                     events: false
                 });
 
-                $urlRouterProvider.otherwise('/0');
+                $urlRouterProvider.otherwise('/0/tiles');
                 $locationProvider.html5Mode(true);
 
 
