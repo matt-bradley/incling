@@ -19,6 +19,10 @@ angular.module('tilesandtasksapp').service('TilesService', ['$http', 'API', func
                 }
             }
         },
+        removeTile: function (tile) {
+            var url = API.url + 'tile/' + tile.id + '/';
+            return $http.delete(url)
+        },
         addTaskToTile: function (tile, task) {
             function findt(t) {
                 return t.id === tile.id

@@ -112,8 +112,23 @@ angular.module('tilesandtasksapp')
                     key: 'status_live',
                     type: 'select',
                     templateOptions: {
-                        label: 'Status'
-                    }
+                        label: 'Status',
+                        "options": [
+                            {
+                                "name": "Pending",
+                                "value": "P"
+                            },
+                            {
+                                "name": "Archived",
+                                "value": "A"
+                            },
+                            {
+                                "name": "Live",
+                                "value": "L"
+                            }
+                        ]
+                    },
+
                 }
             ];
 
@@ -176,11 +191,14 @@ angular.module('tilesandtasksapp')
             };
 
         }])
-    .controller('deleteTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'TilesService', 'tile',
-        function ($scope, $uibModalInstance, formlyVersion, TasksService, TilesService, tile) {
+    .controller('deleteTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TilesService', 'tile',
+        function ($scope, $uibModalInstance, formlyVersion, TilesService, tile) {
+            $scope.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
+            };
             var t = tile;
             $scope.removeTile = function () {
-                TasksService.removeTask(t).then(function (resp) {
+                TilesService.removeTile(t).then(function (resp) {
                     console.log(resp)
                 }, function (err) {
                     console.log(err)
@@ -190,7 +208,11 @@ angular.module('tilesandtasksapp')
         }])
     .controller('deleteTaskModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'task',
         function ($scope, $uibModalInstance, formlyVersion, TasksService, task) {
+            $scope.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
+            };
             var t = task;
+            console.log(t)
             $scope.removeTask = function () {
                 TasksService.removeTask(t).then(function (resp) {
                     console.log(resp)
