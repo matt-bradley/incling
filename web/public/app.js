@@ -11,7 +11,7 @@
         'ngMessages',
         'ngSanitize',
         'formly',
-        'formlyBootstrap'
+        'formlyBootstrap',
     ])
         .service('API', function () {
             var static_base = url;
@@ -22,12 +22,30 @@
             };
         })
 
-        .config(['$stateProvider', '$httpProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$locationProvider', 'formlyConfigProvider',
+        .config([
+            '$stateProvider',
+            '$httpProvider',
+            '$urlRouterProvider',
+            '$ocLazyLoadProvider',
+            '$locationProvider',
+            'formlyConfigProvider',
             function ($stateProvider, $httpProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider, formlyConfigProvider) {
-                formlyConfigProvider.setType({
-                    name: 'custom',
-                    templateUrl: 'custom.html'
-                });
+                formlyConfigProvider.setType([
+                    {
+                        name: 'custom',
+                        templateUrl: 'custom.html'
+                    },
+                    {
+                        name: 'datetimepicker',
+                        template: '<br><datetimepicker ng-model="model[options.key]" show-spinners="true" date-format="M/d/yyyy" date-options="dateOptions"></datetimepicker>',
+                        wrapper: ['bootstrapLabel'],
+                        defaultOptions: {
+                            templateOptions: {
+                                label: 'Time',
+                                minDate: '04/01/2016'
+                            }
+                        }
+                    }]);
 
                 $ocLazyLoadProvider.config({
                     debug: false,

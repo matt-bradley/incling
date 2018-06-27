@@ -12,12 +12,29 @@ angular.module('tilesandtasksapp')
                 // error handling
             });
 
-
-            $scope.openModalAddTaskToTile = function (data) {
+            $scope.addNewTile = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: "static/views/modals/addTaskModal.html",
-                    controller: "addTaskToTileModalCtrl",
+                    templateUrl: "static/views/modals/addNewTileModal.html",
+                    controller: "addNewTileModalCtrl",
+                    windowTopClass: 'project-modal',
+                    keyboard: false,
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {}
+                });
+                modalInstance.result.then(function (selectedItem) {
+
+                }, function () {
+                    //$log.info('Modal dismissed at: ' + new Date());
+                });
+            };
+
+            $scope.deleteTileConfirm = function (data) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: "static/views/modals/modalDeleteTileConfirm.html",
+                    controller: "deleteTileModalCtrl",
                     windowTopClass: 'project-modal',
                     keyboard: false,
                     backdrop: 'static',
@@ -33,25 +50,86 @@ angular.module('tilesandtasksapp')
                 });
             };
 
-            $scope.removeTask = function (task) {
-                TasksService.removeTask(task).then(function (resp) {
-                    console.log(resp)
-                }, function (err) {
-                    console.log(err)
+            $scope.deleteTaskConfirm = function (data) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: "static/views/modals/modalDeleteTaskConfirm.html",
+                    controller: "deleteTaskModalCtrl",
+                    windowTopClass: 'project-modal',
+                    keyboard: false,
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        task: data
+                    }
+                });
+                modalInstance.result.then(function (selectedItem) {
+
+                }, function () {
+                    //$log.info('Modal dismissed at: ' + new Date());
+                });
+            };
+
+            $scope.openModalAddTaskToTile = function (data) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: "static/views/modals/addTaskModal.html",
+                    controller: "addTaskToTileModalCtrl",
+                    windowTopClass: 'project-modal',
+                    keyboard: false,
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        task: data
+                    }
+                });
+                modalInstance.result.then(function (selectedItem) {
+
+                }, function () {
+                    //$log.info('Modal dismissed at: ' + new Date());
+                });
+            };
+
+
+        }])
+    .controller('addNewTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'TilesService',
+        function ($scope, $uibModalInstance, formlyVersion, TasksService, TilesService) {
+            $scope.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
+            };
+            $scope.model = {};
+            $scope.options = {};
+            $scope.fields = [
+                {
+                    key: 'datetime',
+                    type: 'datetimepicker',
+                    templateOptions: {
+                        label: 'Date',
+                        datepickerPopup: 'dd-MMMM-yyyy'
+                    },
+                },
+                {
+                    key: 'status_live',
+                    type: 'select',
+                    templateOptions: {
+                        label: 'Status'
+                    }
+                }
+            ];
+
+            $scope.originalFields = angular.copy($scope.fields);
+
+            $scope.onSubmit = function () {
+                $scope.model.tile = tile.id;
+                TasksService.addTask($scope.model).then(function (resp) {
+                    TilesService.addTaskToTile(tile, resp)
                 })
             };
 
-            // $scope.removeTile = function (task) {
-            //     TasksService.removeTask(task).then(function (resp) {
-            //         console.log(resp)
-            //     }, function (err) {
-            //         console.log(err)
-            //     })
-            // };
 
         }])
-    .controller('addTaskToTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'TilesService', 'tile',
-        function ($scope, $uibModalInstance, formlyVersion, TasksService, TilesService, tile) {
+    .controller('addTaskToTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'TilesService',
+        function ($scope, $uibModalInstance, formlyVersion, TasksService, TilesService) {
             $scope.cancel = function () {
                 $uibModalInstance.dismiss('cancel');
             };
@@ -97,5 +175,30 @@ angular.module('tilesandtasksapp')
                 })
             };
 
+        }])
+    .controller('deleteTileModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'TilesService', 'tile',
+        function ($scope, $uibModalInstance, formlyVersion, TasksService, TilesService, tile) {
+            var t = tile;
+            $scope.removeTile = function () {
+                TasksService.removeTask(t).then(function (resp) {
+                    console.log(resp)
+                }, function (err) {
+                    console.log(err)
+                })
+            };
+
+        }])
+    .controller('deleteTaskModalCtrl', ['$scope', '$uibModalInstance', 'formlyVersion', 'TasksService', 'task',
+        function ($scope, $uibModalInstance, formlyVersion, TasksService, task) {
+            var t = task;
+            $scope.removeTask = function () {
+                TasksService.removeTask(t).then(function (resp) {
+                    console.log(resp)
+                }, function (err) {
+                    console.log(err)
+                })
+            };
         }]);
+
+
 
